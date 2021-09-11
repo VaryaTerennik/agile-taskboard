@@ -1,0 +1,111 @@
+{
+    "categories": [{
+        "name": "In Process",
+        "id": "inprocess",
+        "tasks": [{
+            "name": "Task18",
+            "author": "",
+            "implementer": "",
+            "difficulty": "",
+            "deadline": "",
+            "description": "",
+            "type": "backlog"
+        }, {
+            "name": "Task1",
+            "author": "",
+            "implementer": "",
+            "difficulty": "",
+            "deadline": "",
+            "description": "",
+            "type": "backlog"
+        }]
+    }, {
+        "name": "backlog",
+        "id": "backlog",
+        "tasks": [{
+            "name": "Task5",
+            "author": "",
+            "implementer": "",
+            "difficulty": "",
+            "deadline": "",
+            "description": "",
+            "type": "backlog"
+        }, {
+            "name": "Task47",
+            "author": "",
+            "implementer": "",
+            "difficulty": "",
+            "deadline": "",
+            "description": "",
+            "type": "backlog"
+        }, {
+            "name": "Task10",
+            "author": "",
+            "implementer": "",
+            "difficulty": "",
+            "deadline": "",
+            "description": "",
+            "type": "inprocess"
+        }]
+    }, {
+        "name": "Done",
+        "id": "done",
+        "tasks": [{
+            "name": "Task3",
+            "author": "",
+            "implementer": "",
+            "difficulty": "",
+            "deadline": "",
+            "description": "",
+            "type": "done"
+        }, {
+            "name": "New",
+            "author": "Alex",
+            "implementer": "",
+            "Alex": "",
+            "deadline": "17.01.2021",
+            "description": "",
+            "type": "done"
+        }, {
+            "name": "Task6",
+            "author": "",
+            "implementer": "",
+            "difficulty": "",
+            "deadline": "",
+            "description": "",
+            "type": "inprocess"
+        }]
+    }, {
+        "name": "fffff",
+        "id": 0,
+        "tasks": [{
+            "name": "ssss",
+            "type": 0
+        }, {
+            "name": "новая задача",
+            "type": "done"
+        }]
+    }],
+
+    "archive": [{"name": "Archive", "id": "archive", "tasks":[
+    {
+        "name": "Task8",
+        "author": "",
+        "implementer": "",
+        "difficulty": "",
+        "deadline": "",
+        "description": "",
+        "type": "inprocess"
+    },
+    {
+        "name": "Task15",
+        "author": "",
+        "implementer": "",
+        "difficulty": "",
+        "deadline": "",
+        "description": "",
+        "type": "done"
+    }
+    ]}
+]
+}
