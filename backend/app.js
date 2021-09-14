@@ -21,7 +21,7 @@ if(request.url === "/categories" && request.method === "GET") {
         });
     }
 
-    if(request.url === "/archive" && request.method === "GET") {
+if(request.url === "/archive" && request.method === "GET") {
         fs.readFile("./data/archive.json", function(err, data){
             if(err) throw err;
             console.log(data);
@@ -67,11 +67,11 @@ if(request.url === "/categories" && request.method === "GET") {
                
                 fs.writeFile("./data/categories.json", JSON.stringify({categories: aCategories}), function() {
 
-                })
+                });
                 response.statusCode = "201";
-                response.end()
-                })
-            })
+                response.end();
+                });
+            });
     }
 
     // if(request.url === "/tasks" && request.method === "PUT"){

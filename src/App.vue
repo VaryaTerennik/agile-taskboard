@@ -35,7 +35,7 @@ export default {
     showArchive: false,
     categories: [
     ],
-    archive: "",
+    archive: {},
     // {name: "Archive", id: "archive", tasks:[
     //               {
     //             name: "Task8",
@@ -91,19 +91,7 @@ export default {
 
     },
 
-    getCategories: function(){
-     let oReq = fetch("http://localhost:3000/categories", {
-        mode: "cors"
-      });
-      
-      oReq
-      .then(oResponse => oResponse.json())
-      .then(oResponse => this.categories = oResponse.categories)
-      // .then(oResponse => this.archive = oResponse.archive)
-
-    },
-
-     getArchive: function(){
+  getArchive: function(){
      let oReq = fetch("http://localhost:3000/archive", {
         mode: "cors"
       });
@@ -115,6 +103,16 @@ export default {
 
     },
 
+    getCategories: function(){
+     let oReq = fetch("http://localhost:3000/categories", {
+        mode: "cors"
+      });
+      
+      oReq
+      .then(oResponse => oResponse.json())
+      .then(oResponse => this.categories = oResponse.categories)
+      console.log(this.categories)
+    },
    
     showArchiveInfo() {
         this.showArchive = true;
@@ -137,9 +135,8 @@ export default {
   },
 
    created: function(){
-      this.getArchive();
       this.getCategories();
-      // this.getArchive();
+      this.getArchive();
     }
 
 }
