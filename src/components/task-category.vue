@@ -46,15 +46,13 @@ export default {
       onDrop(event, toCategoryId) {
           const fromtaskIndex = parseInt(event.dataTransfer.getData('fromtaskIndex'))
           const fromCategoryId = event.dataTransfer.getData('fromCategoryId')
-           let oToCategory = this.$root.categories.find(el => el.id == toCategoryId)
-          let oFromCategory = this.$root.categories.find(el => el.id == fromCategoryId)
           let task = this.$root.categories.find(el => el.id == fromCategoryId).tasks.splice(fromtaskIndex, 1)[0];
           this.$root.categories.find(el => el.id == toCategoryId).tasks.push(task);
 
                 fetch("http://localhost:3000/categories", {
                 method: "PATCH",
                 mode: "cors",
-                body: JSON.stringify([oToCategory, oFromCategory, fromtaskIndex])
+                body: JSON.stringify({toCategoryId, fromCategoryId, fromtaskIndex})
             })
           
     },
@@ -115,8 +113,8 @@ export default {
     border: none;
     border-radius: 10px;
    box-shadow: 0px -1px 26px -11px rgba(0,0,0,0.75);
-  -webkit-box-shadow: 0px -1px 26px -11px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px -1px 26px -11px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px -1px 26px -11px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px -1px 26px -11px rgba(0,0,0,0.75);
     background-color: white;
     color: rgb(126, 125, 125);
     cursor: pointer;

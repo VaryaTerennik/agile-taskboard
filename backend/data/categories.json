@@ -3,13 +3,13 @@
         "name": "In Process",
         "id": "inprocess",
         "tasks": [{
-            "name": "Task18",
+            "name": "Task6",
             "author": "",
             "implementer": "",
             "difficulty": "",
             "deadline": "",
             "description": "",
-            "type": "backlog"
+            "type": "inprocess"
         }, {
             "name": "Task1",
             "author": "",
@@ -23,22 +23,29 @@
         "name": "backlog",
         "id": "backlog",
         "tasks": [{
-            "name": "Task5",
+            "name": "Task3",
             "author": "",
             "implementer": "",
             "difficulty": "",
             "deadline": "",
             "description": "",
-            "type": "backlog"
+            "type": "done"
         }, {
-            "name": "Task47",
-            "author": "",
+            "name": "New",
+            "author": "Alex",
             "implementer": "",
-            "difficulty": "",
-            "deadline": "",
+            "Alex": "",
+            "deadline": "17.01.2021",
             "description": "",
-            "type": "backlog"
+            "type": "done"
         }, {
+            "name": "ssss",
+            "type": 0
+        }]
+    }, {
+        "name": "Done",
+        "id": "done",
+        "tasks": [{
             "name": "Task10",
             "author": "",
             "implementer": "",
@@ -46,17 +53,8 @@
             "deadline": "",
             "description": "",
             "type": "inprocess"
-        }]
-    }, {
-        "name": "Done",
-        "id": "done",
-        "tasks": [{
-            "name": "Task3",
-            "author": "",
-            "implementer": "",
-            "difficulty": "",
-            "deadline": "",
-            "description": "",
+        }, {
+            "name": "новая задача",
             "type": "done"
         }, {
             "name": "New",
@@ -82,30 +80,8 @@
             "name": "ssss",
             "type": 0
         }, {
-            "name": "новая задача",
-            "type": "done"
+            "name": "fszfsf",
+            "type": 0
         }]
-    }],
-
-    "archive": [{"name": "Archive", "id": "archive", "tasks":[
-    {
-        "name": "Task8",
-        "author": "",
-        "implementer": "",
-        "difficulty": "",
-        "deadline": "",
-        "description": "",
-        "type": "inprocess"
-    },
-    {
-        "name": "Task15",
-        "author": "",
-        "implementer": "",
-        "difficulty": "",
-        "deadline": "",
-        "description": "",
-        "type": "done"
-    }
-    ]}
-]
+    }]
 }

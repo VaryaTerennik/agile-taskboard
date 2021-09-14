@@ -36,10 +36,11 @@ export default {
             let taskIndex = this.tasks[index];
             this.$root.categories.find(el => el.id == categoryId).tasks.splice(index, 1)
             this.archive.tasks.push(taskIndex);
+             
              fetch("http://localhost:3000/tasks", {
                     method: "PATCH",
                     mode: "cors",
-                    body: JSON.stringify([categoryId, index])
+                    body: JSON.stringify({categoryId, index})
              })
             event.stopPropagation();             
         },
@@ -74,7 +75,7 @@ export default {
                 fetch("http://localhost:3000/categories", {
                 method: "PATCH",
                 mode: "cors",
-                body: JSON.stringify([oToCategory, oFromCategory, fromtaskIndex, toTaskIndex])
+                body: JSON.stringify({toCategoryId, fromCategoryId, fromtaskIndex, toTaskIndex})
             })
 
        event.stopPropagation();
