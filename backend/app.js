@@ -155,7 +155,7 @@ if(request.url === "/archive" && request.method === "GET") {
         request.on('end', () => {
             fs.readFile("./data/categories.json", "utf-8", function(err, data){
                 if(err) throw err;
-                data = JSON.parse(data);
+                data = JSON.parse(data).categories;
                 let newData = JSON.parse(newDataFront);
                 let oToCategoryId = newData.toCategoryId;
                 console.log(oToCategoryId);
@@ -182,7 +182,7 @@ if(request.url === "/archive" && request.method === "GET") {
                 }
                 console.log(oToCategory)
                 
-                fs.writeFile("./data/categories.json", JSON.stringify(data), function() {
+                fs.writeFile("./data/categories.json", JSON.stringify({categories: data}), function() {
 
                 })
                 response.statusCode = "201";
@@ -195,7 +195,7 @@ if(request.url === "/archive" && request.method === "GET") {
         let newData = '';
         request.on('data', chunk => newData += chunk);
         request.on('end', () => {
-            fs.readFile("./data/categories.json", "./data/archive.json", "utf-8", (err, data) => {
+            fs.readFile("./data/categories.json", "utf-8", (err, data) => {
                 if(err) throw err;
                 let aCategories = JSON.parse(data).categories;
                 let aArchive = JSON.parse(data).archive;
@@ -207,7 +207,7 @@ if(request.url === "/archive" && request.method === "GET") {
 
                 aArchive.tasks.push(sCategory.tasks.splice(index, 1));
 
-                fs.writeFile("./data/categories.json", JSON.stringify(data), function() {
+                fs.writeFile("./data/categories.json", JSON.stringify({categories: aCategories, archive: aArchive}), function() {
 
                 })
                 response.statusCode = "201";

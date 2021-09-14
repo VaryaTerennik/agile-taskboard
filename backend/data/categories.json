@@ -86,24 +86,24 @@
     }],
 
     "archive": [{
-        "name": "Archive",
-        "id": "archive",
-        "tasks": [{
-            "name": "Task15",
-            "author": "",
-            "implementer": "",
-            "difficulty": "",
-            "deadline": "",
-            "description": "",
-            "type": "inprocess"
-        }, {
-            "name": "Task20",
-            "author": "",
-            "implementer": "",
-            "difficulty": "",
-            "deadline": "",
-            "description": "",
-            "type": "backlog"
-        }]
+    "name": "Archive",
+    "id": "archive",
+    "tasks": [{
+        "name": "Task15",
+        "author": "",
+        "implementer": "",
+        "difficulty": "",
+        "deadline": "",
+        "description": "",
+        "type": "inprocess"
+    }, {
+        "name": "Task20",
+        "author": "",
+        "implementer": "",
+        "difficulty": "",
+        "deadline": "",
+        "description": "",
+        "type": "backlog"
     }]
+}]
 }
