@@ -33,9 +33,8 @@ export default {
   data: function() {
     return {
     showArchive: false,
-    categories: [
-    ],
-    archive: {},
+    categories: [],
+    archive: [],
     // {name: "Archive", id: "archive", tasks:[
     //               {
     //             name: "Task8",
@@ -96,10 +95,9 @@ export default {
         mode: "cors"
       });
       
-      oReq
+      return oReq
       .then(oResponse => oResponse.json())
       .then(oResponse => this.archive = oResponse.archive)
-      console.log(this.archive)
 
     },
 
@@ -108,10 +106,10 @@ export default {
         mode: "cors"
       });
       
-      oReq
+      return oReq
       .then(oResponse => oResponse.json())
       .then(oResponse => this.categories = oResponse.categories)
-      console.log(this.categories)
+      
     },
    
     showArchiveInfo() {
@@ -135,8 +133,10 @@ export default {
   },
 
    created: function(){
-      this.getCategories();
-      this.getArchive();
+      let der = this.getCategories();
+      console.log(der)
+      let set = this.getArchive();
+      console.log(set)
     }
 
 }

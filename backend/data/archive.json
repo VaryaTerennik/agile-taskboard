@@ -1,5 +1,5 @@
 {
-    "archive": [{
+    "archive": {
     "name": "Archive",
     "id": "archive",
     "tasks": [{
@@ -19,5 +19,5 @@
         "description": "",
         "type": "backlog"
     }]
-}]
+}
 }
