@@ -6,9 +6,9 @@
     </div>
     <p class="title-task-props">Implementer: {{task.implementer}}</p>
     <p class="title-task-props">Deadline: {{task.deadline}}</p>
-</div> 
+</div>
 <div v-show="showDetail" >
-<button class="btn-close" @click="closeModel">Close</button> 
+<button class="btn-close" @click="closeModel">Close</button>
 <TaskDetail v-bind:index="index" v-bind:task="task"></TaskDetail>
 </div>
 </template>
@@ -19,9 +19,9 @@ import TaskDetail from './taskDetail.vue';
 export default {
     name: "Task",
     props: ["task", "index", "categoryId"],
-    inject: ["categories", "tasks", "archive"],
+    inject: ["categories", "tasks", "archive", "data"],
     data: function() {
-        return { 
+        return {
             showDetail: false,
             }
     },
@@ -31,20 +31,20 @@ export default {
         return el.type === sType;
             })
         },
-        
+
       addToArchive: function(event, categoryId, index){
             let taskIndex = this.tasks[index];
             this.$root.categories.find(el => el.id == categoryId).tasks.splice(index, 1)
             this.archive.tasks.push(taskIndex);
-             
+
              fetch("http://localhost:3000/tasks", {
                     method: "PATCH",
                     mode: "cors",
                     body: JSON.stringify({categoryId, index})
              })
-            event.stopPropagation();             
+            event.stopPropagation();
         },
-      
+
         showDetailInfo() {
         this.showDetail = true;
         },
@@ -71,7 +71,7 @@ export default {
           let oToCategory = this.$root.categories.find(el => el.id == toCategoryId)
           let oFromCategory = this.$root.categories.find(el => el.id == fromCategoryId)
           oToCategory.tasks.splice(toTaskIndex, 1, oFromCategory.tasks.splice(fromtaskIndex, 1)[0], oToCategory.tasks.slice(toTaskIndex)[0]);
-         
+
                 fetch("http://localhost:3000/categories", {
                 method: "PATCH",
                 mode: "cors",
@@ -86,7 +86,7 @@ export default {
     components: {
       TaskDetail
     }
-   
+
 }
 </script>
 

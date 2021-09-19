@@ -63,10 +63,20 @@ export default {
     }
   },
   provide: function () {
-  return {
-    categories: this.categories,
-    archive: this.archive,
-  }
+    const data = {}
+    Object.defineProperty(data, 'archive', {
+      enumerable: true,
+      get: () => this.archive,
+    })
+    Object.defineProperty(data, 'categories', {
+      enumerable: true,
+      get: () => this.categories,
+    })
+    return {
+      categories: this.categories,
+      archive: this.archive,
+      data,
+    }
 },
   components: {
     TaskCategory,
@@ -94,7 +104,7 @@ export default {
      let oReq = fetch("http://localhost:3000/archive", {
         mode: "cors"
       });
-      
+
       return oReq
       .then(oResponse => oResponse.json())
       .then(oResponse => this.archive = oResponse.archive)
@@ -105,13 +115,13 @@ export default {
      let oReq = fetch("http://localhost:3000/categories", {
         mode: "cors"
       });
-      
+
       return oReq
       .then(oResponse => oResponse.json())
       .then(oResponse => this.categories = oResponse.categories)
-      
+
     },
-   
+
     showArchiveInfo() {
         this.showArchive = true;
         },
@@ -119,7 +129,7 @@ export default {
      closeArchive() {
         this.showArchive = false;
         },
-  
+
     // onDrop(event, toCategoryId) {
     //   const fromtaskIndex = parseInt(event.dataTransfer.getData('fromtaskIndex'))
     //   const fromCategoryId = parseInt(event.dataTransfer.getData('fromCategoryId'))
@@ -140,7 +150,7 @@ export default {
     }
 
 }
- 
+
 </script>
 
 <style scoped>
