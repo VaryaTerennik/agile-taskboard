@@ -44,9 +44,9 @@
       >
         {{ showEditPopup ? "Save" : "Edit" }}
       </button>
-      <!-- <button v-on:click="clearInput">
+      <button v-on:click="clearInput">
         Отмена
-      </button> -->
+      </button>
 
       <div class="popup edit-background">
         <div class="header">Title: {{ task.name }}</div>
@@ -91,6 +91,14 @@ export default {
       }).then((oResponse) =>
         oResponse.ok ? alert("Задача сохранена") : alert("Ошибка")
       );
+    },
+
+    clearInput() {
+      // this.taskData.name = this.task.name;
+      console.log(this.tasks[this.index].name);
+            console.log(this.taskData.name);
+
+      // this.taskData.deadline = this.task.deadline;
     },
   },
 };
